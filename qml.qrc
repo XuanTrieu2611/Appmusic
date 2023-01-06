@@ -1,0 +1,47 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>Header/Header_1.qml</file>
+        <file>Frame2/Fame_2.qml</file>
+        <file>Src/image_20/image 20.png</file>
+        <file>Src/image_20/918/add.svg</file>
+        <file>Src/image_20/918/heart.svg</file>
+        <file>Src/image_20/914/left.svg</file>
+        <file>Src/image_20/914/random.svg</file>
+        <file>Src/image_20/914/playbutton.svg</file>
+        <file>Src/image_20/914/repeat.svg</file>
+        <file>Src/image_20/914/right.svg</file>
+        <file>Src/image_20/915/Volume1.svg</file>
+        <file>Src/image_20/915/Volume2.svg</file>
+        <file>Src/image_20/25/Frame19.svg</file>
+        <file>Src/image_20/25/Frame20.svg</file>
+        <file>Src/image_20/25/Frame23.svg</file>
+        <file>Src/image_20/25/Frame24.svg</file>
+        <file>Src/image_20/27/Frame22.svg</file>
+        <file>Src/image_20/27/Frame26.svg</file>
+        <file>Src/image_20/mastercard-line.svg</file>
+        <file>Src/image_20/Ellipse 13.png</file>
+        <file>Src/Image_Topchart/image 10.png</file>
+        <file>Src/Image_Topchart/image 12.png</file>
+        <file>Src/Image_Topchart/image 14.png</file>
+        <file>Src/Image_Topchart/image 9.png</file>
+        <file>Src/Image_Tracklist/image 13.png</file>
+        <file>Src/Image_Tracklist/image 14.png</file>
+        <file>Src/Image_Tracklist/image 15.png</file>
+        <file>Src/Image_Tracklist/image 16.png</file>
+        <file>Src/Image_Tracklist/image 17.png</file>
+        <file>Src/Image_Tracklist/image 18.png</file>
+        <file>Src/Image_Tracklist/image 19.png</file>
+        <file>Src/Image_Tracklist/image 21.png</file>
+        <file>Src/Image_Tracklist/image 22.png</file>
+        <file>Src/Image_Tracklist/image 6.png</file>
+        <file>Src/Image_Tracklist/image 8.png</file>
+        <file>Src/Image_Tracklist/image 9.png</file>
+        <file>Src/Image_YouMlike/image 11.png</file>
+        <file>Src/Image_YouMlike/image 15.png</file>
+        <file>Src/Image_YouMlike/image 22.png</file>
+        <file>Src/Image_Tracklist/unnamed.jpg</file>
+        <file>Src/Image_Start/Music-HD-Wallpaper-Free-download.jpg</file>
+        <file>Src/image_20/914/images.png</file>
+    </qresource>
+</RCC>
