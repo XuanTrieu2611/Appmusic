@@ -19,6 +19,7 @@ struct Song {
   QString _time;
   int _year;
 };
+
 class MyModel : public QAbstractListModel {
   Q_OBJECT
 public:
@@ -30,18 +31,30 @@ public:
     _yearRole
   };
 
+  Q_INVOKABLE void setCurrentSong(int position);
+  Q_INVOKABLE void setCurrentSongNextButton();
+  Q_INVOKABLE void setCurrentSongPreviousButton();
+  Q_INVOKABLE QString getNameSong(int position);
+  Q_INVOKABLE QString getImageSong(int position);
+  Q_INVOKABLE QString getAuthorSong(int position);
+  Q_INVOKABLE QString getTimeSong(int position);
   explicit MyModel(QObject *parent = nullptr);
   Song getSong(int i);
   int rowCount(const QModelIndex &parent) const override;
   QVariant data(const QModelIndex &index,
                 int role = Qt::DisplayRole) const override;
   QHash<int, QByteArray> roleNames() const override;
+
 public slots:
 
 private slots:
 
 private: // members
   QVector<Song> _Song;
+  Song _nextSong;
+  Song _currentSong;
+  Song _previousSong;
+  int _position;
 };
 
 #endif // MYMODEL_H

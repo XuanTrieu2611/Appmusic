@@ -43,5 +43,14 @@
         <file>Src/Image_Tracklist/unnamed.jpg</file>
         <file>Src/Image_Start/Music-HD-Wallpaper-Free-download.jpg</file>
         <file>Src/image_20/914/images.png</file>
+        <file>Src/Image_Header/Group1.svg</file>
+        <file>Src/Image_Header/Group2.svg</file>
+        <file>Src/Image_Header/Group3.svg</file>
+        <file>Src/Image_Header/Iconbutton.svg</file>
+        <file>Src/Image_Header/Iconbutton2.svg</file>
+        <file>Src/Image_Header/Iconbutton3.svg</file>
+        <file>Src/Image_Header/Lights.svg</file>
+        <file>Src/Image_Header/return.svg</file>
+        <file>Src/Image_Header/shield.svg</file>
     </qresource>
 </RCC>

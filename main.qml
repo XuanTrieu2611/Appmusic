@@ -14,8 +14,100 @@ Window {
         height: 52
         Rectangle{
             anchors.fill:parent
-            color: "red"
+            color: "#F5F5F5"
+            Image{
+                width: 52
+                height: 12
+                x:21
+                y:19
+                source: "qrc:/Src/Image_Header/Lights.svg"
+            }
+            Image {
+                width: 35
+                height: 24
+                x:91
+                y: 14
+                source: "qrc:/Src/Image_Header/Iconbutton3.svg"
+            }
+            Image {
+                width: 33
+                height: 24
+                x: 1062
+                y:14
+                source: "qrc:/Src/Image_Header/Iconbutton2.svg"
+            }
+            Image {
+                width: 30
+                height: 24
+                x:1029
+                y:14
+                source: "qrc:/Src/Image_Header/Iconbutton.svg"
+            }
+            Image{
+                width: 31
+                height: 24
+                x: 992
+                y: 14
+                source: "qrc:/Src/Image_Header/Group3.svg"
+            }
+            Image {
+                width: 24
+                height: 24
+                x:131
+                y:14
+                source: "qrc:/Src/Image_Header/Group2.svg"
+            }
+            Image {
+                width: 24
+                height: 24
+                x:161
+                y:14
+                source: "qrc:/Src/Image_Header/Group1.svg"
+            }
+            Image {
+                width: 24
+                height: 24
+                x:161
+                y:14
+                source: "qrc:/Src/Image_Header/Group1.svg"
+            }
+
+            Image {
+                x: 250
+                y:14
+                width: 31
+                height: 24
+                source: "qrc:/Src/Image_Header/shield.svg"
+            }
+            Rectangle{
+                x: 286
+                y: 12
+                width: 576
+                height: 28
+                color: "white"
+                radius: 4
+                TextEdit{
+                    anchors.fill: parent
+                    color: "black"
+                    font.pointSize: 12
+                    cursorVisible:  true
+                    horizontalAlignment: TextEdit.AlignHCenter
+                    verticalAlignment: TextEdit.AlignVCenter
+                    font.family: "Poppins"
+                }
+
+            }
+
+            Image {
+                x: 832
+                y:14
+                width: 29
+                height: 24
+                source: "qrc:/Src/Image_Header/return.svg"
+            }
+
         }
+
     }
     Connections{
         target: nowplay
@@ -186,7 +278,14 @@ Window {
                 MouseArea{
                     anchors.fill: parent
                     onClicked: {
-                        nowplay.previous()
+                        nowplay.setNameNowPlayingSong(playnextmodel.getNameSong(1))
+                        nowplay.setImageNowPlayingSong(playnextmodel.getImageSong(1))
+                        nowplay.setAuthorNowPlayingSong(playnextmodel.getAuthorSong(1))
+                        nowplay.setTimeNowPlayingSong(playnextmodel.getTimeSong(1))
+                        nowplay.setPlayStateNowPlayingSong(true)
+                        nowplay.setDurationNowPlayingSong(0)
+                        playnextmodel.setCurrentSongPreviousButton()
+                        nowplay.play()
                     }
                 }
             }
@@ -200,12 +299,14 @@ Window {
                 MouseArea{
                     anchors.fill: parent
                     onClicked: {
-//                        nowplay.next(listNextSong.model.get(curentIndex).name
-//                                     ,playnextmodel.model[1].image
-//                                     ,playnextmodel.model[1].author
-//                                     ,playnextmodel.model[1].time
-//                                     ,0)
-                        console.log(listNextSong.model(1).name)
+                        nowplay.setNameNowPlayingSong(playnextmodel.getNameSong(3))
+                        nowplay.setImageNowPlayingSong(playnextmodel.getImageSong(3))
+                        nowplay.setAuthorNowPlayingSong(playnextmodel.getAuthorSong(3))
+                        nowplay.setTimeNowPlayingSong(playnextmodel.getTimeSong(3))
+                        nowplay.setPlayStateNowPlayingSong(true)
+                        nowplay.setDurationNowPlayingSong(0)
+                        playnextmodel.setCurrentSongNextButton()
+                        nowplay.play()
                     }
                 }
             }
@@ -726,14 +827,15 @@ Window {
                             }
                             onPressed: {
                                 playingNextRectangle.color = "grey"
-                                //console.log(imageSong.source)
-                                nowplay.setNameNowPlayingSong(nameSong.text)
-                                nowplay.setImageNowPlayingSong(imageSong.source)
-                                nowplay.setAuthorNowPlayingSong(authorSong.text)
-                                nowplay.setTimeNowPlayingSong(timeSong.text)
+                                playnextmodel.setCurrentSong(index);
+                                nowplay.setNameNowPlayingSong(playnextmodel.getNameSong(2))
+                                nowplay.setImageNowPlayingSong(playnextmodel.getImageSong(2))
+                                nowplay.setAuthorNowPlayingSong(playnextmodel.getAuthorSong(2))
+                                nowplay.setTimeNowPlayingSong(playnextmodel.getTimeSong(2))
                                 nowplay.setPlayStateNowPlayingSong(true)
                                 nowplay.setDurationNowPlayingSong(0)
                                 nowplay.play()
+                                console.log(index)
                             }
 
                         }

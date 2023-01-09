@@ -54,9 +54,6 @@ public:
   QString durantionQStringNowPlayingSong();
   bool playStateNowPlayingSong();
   Q_INVOKABLE void play();
-  Q_INVOKABLE void next(QString name, QString image, QString author,
-                        QString time, int duration);
-  Q_INVOKABLE void previous();
   void start();
 signals:
   void imageNowPlayingSongChanged();

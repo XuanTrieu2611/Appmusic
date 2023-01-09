@@ -4,7 +4,10 @@
 #include <QTimer>
 #include <cstdlib>
 
-MyModel::MyModel(QObject *parent) : QAbstractListModel(parent) {
+MyModel::MyModel(QObject *parent)
+    : QAbstractListModel(parent), _currentSong("", "", "", 0, 0),
+      _nextSong("", "", "", 0, 0), _previousSong("", "", "", 0, 0),
+      _position(0) {
   _Song << Song("STAY", "qrc:/Src/Image_Tracklist/unnamed.jpg", "Justen Bieber",
                 5, 2016)
         << Song("BABY", "qrc:/Src/Image_Tracklist/unnamed.jpg", "Justen Bieber",
@@ -76,4 +79,88 @@ QVariant MyModel::data(const QModelIndex &index, int role) const {
     return data._year;
   } else
     return QVariant();
+}
+void MyModel::setCurrentSong(int position) {
+  // qDebug() << _Song[position]._name;
+  _position = position;
+  if (position == 0) {
+    _currentSong = _Song[position];
+    _nextSong = _Song[position + 1];
+    _previousSong = _Song[position];
+  } else if (position == _Song.length() - 1) {
+    _currentSong = _Song[position];
+    _nextSong = _Song[0];
+    _previousSong = _Song[position - 1];
+  } else {
+    _currentSong = _Song[position];
+    _nextSong = _Song[position + 1];
+    _previousSong = _Song[position - 1];
+  }
+  // qDebug() << _previousSong._name;
+  // qDebug() << _currentSong._name;
+  // qDebug() << _nextSong._name;
+}
+
+void MyModel::setCurrentSongNextButton() {
+  _position++;
+  if (_position == 18) {
+    setCurrentSong(0);
+  } else {
+    setCurrentSong(_position);
+  }
+  //  qDebug() << _previousSong._name;
+  //  qDebug() << _currentSong._name;
+  //  qDebug() << _nextSong._name;
+}
+void MyModel::setCurrentSongPreviousButton() {
+  _position--;
+  if (_position == -1) {
+    setCurrentSong(0);
+  } else {
+    setCurrentSong(_position);
+  }
+}
+QString MyModel::getNameSong(int position) {
+  if (position == 1) {
+    return _previousSong._name;
+  } else if (position == 2) {
+    return _currentSong._name;
+  } else if (position == 3) {
+    return _nextSong._name;
+  }
+  return "";
+}
+
+QString MyModel::getImageSong(int position) {
+  if (position == 1) {
+    return _previousSong._image;
+  } else if (position == 2) {
+    return _currentSong._image;
+  } else if (position == 3) {
+
+    return _nextSong._image;
+  }
+  return "";
+}
+
+QString MyModel::getAuthorSong(int position) {
+  if (position == 1) {
+    return _previousSong._author;
+  } else if (position == 2) {
+    return _currentSong._author;
+  } else if (position == 3) {
+    return _nextSong._author;
+  }
+  return "";
+}
+
+QString MyModel::getTimeSong(int position) {
+  if (position == 1) {
+    return _previousSong._time;
+  } else if (position == 2) {
+    return _currentSong._time;
+  } else if (position == 3) {
+    return _nextSong._time;
+  }
+  return "";
 }
